@@ -18,14 +18,14 @@ module.exports = {
         rules: [
             {
                 test: /\.jsx?$/,
-                exclude: "/node_modules/",
+                exclude: /node_modules/,
                 use: [
                     "babel-loader"
                 ]
             },
             {
-                test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\s]+)?$/,
-                use: "file-loader"
+                test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
+                use: ["file-loader"]
             }
         ]
     },
@@ -33,7 +33,7 @@ module.exports = {
         new htmlPlugin({
             title: "Membership Application",
             favicon: "./src/assets/images/paragon.png",
-            template: "./src/index.html"
+            template: "./src/template.js"
         })
     ]
 

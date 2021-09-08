@@ -1,10 +1,11 @@
-import { MuiThemeProvider, createTheme } from "@material-ui/styles";
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import {
     indigo,
     pink
 } from "@material-ui/core/colors";
 import { BrowserRouter } from "react-router-dom";
 import MainRouter from "./MainRouter";
+import React from "react"
 
 
 const theme = createTheme({
@@ -29,11 +30,13 @@ const theme = createTheme({
 
 
 const App = () => {
-    <BrowserRouter>
-        <MuiThemeProvider theme={theme}>
-            <MainRouter />
-        </MuiThemeProvider>
-    </BrowserRouter>
+    return (
+        <BrowserRouter>
+            <MuiThemeProvider theme={theme}>
+                <MainRouter />
+            </MuiThemeProvider>
+        </BrowserRouter>
+    )
 }
 
 export default App;
